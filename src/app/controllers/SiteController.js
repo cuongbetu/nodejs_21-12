@@ -1,14 +1,12 @@
 class SiteController {
-    // [GET]/
-    search(req,res){
-        return res.render('search');
-    }
-      //[GET]/search
-      index(req,res){
+    // [GET]/home
+    index(req, res) {
         return res.render('home');
+    }
+    //  [GET]/search
+    search(req, res) {
+        return res.render('search');
     }
 }
 
-module.exports = new SiteController;
-
-//const newsController = require('./NewsController');
+module.exports = new SiteController();
