@@ -5,7 +5,7 @@ var handlebars = require('express-handlebars');
 const app = express();
 const port = 3000;
 const route = require('./routes');
-
+const db = require('./config/db/index');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware của phương thức post
@@ -24,6 +24,10 @@ app.engine(
         extname: '.hbs',
     }),
 );
+
+//Connect to db
+db.connect();
+
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
